@@ -3,20 +3,22 @@
 # * hr_attendance
 # 
 # Translators:
-# son dang <son.dang@doda100.com>, 2017
-# Duy BQ <duybq86@gmail.com>, 2017
-# Tri Bui <tribd@trobz.com>, 2017
 # Phạm Lân <phamquanglan@gmail.com>, 2017
+# son dang <son.dang@doda100.com>, 2017
 # Martin Trigaux, 2017
 # fanha99 <fanha99@hotmail.com>, 2017
-# thanh nguyen <thanhnguyen.icsc@gmail.com>, 2018
+# thanhnguyen.icsc <thanhnguyen.icsc@gmail.com>, 2018
+# Tri Bui <tribd@trobz.com>, 2018
+# Duy BQ <duybq86@gmail.com>, 2018
+# Dung Nguyen Thi <dungnt@trobz.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-16 08:08+0000\n"
-"PO-Revision-Date: 2017-11-16 08:08+0000\n"
-"Last-Translator: thanh nguyen <thanhnguyen.icsc@gmail.com>, 2018\n"
+"PO-Revision-Date: 2017-09-20 10:17+0000\n"
+"Last-Translator: Dung Nguyen Thi <dungnt@trobz.com>, 2019\n"
 "Language-Team: Vietnamese (https://www.transifex.com/odoo/teams/41243/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +30,7 @@ msgstr ""
 #: code:addons/hr_attendance/models/hr_attendance.py:55
 #, python-format
 msgid "\"Check Out\" time cannot be earlier than \"Check In\" time."
-msgstr "Giờ \"Check out\" không thể trước giờ \"Check in\"."
+msgstr "Giờ \"Ra\" không thể trước giờ \"Vào\"."
 
 #. module: hr_attendance
 #: code:addons/hr_attendance/models/hr_attendance.py:29
@@ -70,13 +72,13 @@ msgstr "Hoàn thành một ngày làm việc tốt nữa! Hẹn gặp lại bạ
 #: model:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_pivot
 #: model:ir.ui.view,arch_db:hr_attendance.view_employee_form_inherit_hr_attendance
 msgid "Attendance"
-msgstr "Vào/Ra"
+msgstr "Điểm danh"
 
 #. module: hr_attendance
 #: model:ir.actions.act_window,name:hr_attendance.hr_attendance_action_graph
 #: model:ir.actions.act_window,name:hr_attendance.hr_attendance_action_graph_filtered
 msgid "Attendance Analysis"
-msgstr "Phân tích Vào/Ra"
+msgstr "Phân tích Điểm danh"
 
 #. module: hr_attendance
 #: model:ir.actions.act_window,name:hr_attendance.hr_attendance_action
@@ -87,7 +89,7 @@ msgstr "Phân tích Vào/Ra"
 #: model:ir.ui.view,arch_db:hr_attendance.hr_department_view_kanban
 #: model:ir.ui.view,arch_db:hr_attendance.res_config_settings_view_form
 msgid "Attendances"
-msgstr "Quản lý Vào/Ra"
+msgstr "Quản lý Điểm danh"
 
 #. module: hr_attendance
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_barcode
@@ -290,7 +292,7 @@ msgstr "Mã PIN Nhân viên"
 #: model:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_form
 #: model:ir.ui.view,arch_db:hr_attendance.view_attendance_tree
 msgid "Employee attendances"
-msgstr ""
+msgstr "Điểm danh của nhân viên"
 
 #. module: hr_attendance
 #: model:ir.ui.view,arch_db:hr_attendance.view_employee_kanban_inherit_hr_attendance
@@ -469,7 +471,7 @@ msgstr "Cập nhật lần cuối"
 #. module: hr_attendance
 #: model:ir.ui.menu,name:hr_attendance.menu_hr_attendance_manage_attendances
 msgid "Manage Attendances"
-msgstr "Quản lý Vào/Ra"
+msgstr "Quản lý Điểm danh"
 
 #. module: hr_attendance
 #: model:res.groups,name:hr_attendance.group_hr_attendance_manager
@@ -480,7 +482,7 @@ msgstr "Quản lý"
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_manual_attendance
 #: model:res.groups,name:hr_attendance.group_hr_attendance
 msgid "Manual Attendance"
-msgstr "Vào/Ra thủ công"
+msgstr "Điểm danh thủ công"
 
 #. module: hr_attendance
 #: model:ir.actions.client,name:hr_attendance.hr_attendance_action_greeting_message
@@ -495,7 +497,7 @@ msgstr "Tháng"
 #. module: hr_attendance
 #: model:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_filter
 msgid "My Attendances"
-msgstr "Vào/Ra của tôi"
+msgstr "Điểm danh của tôi"
 
 #. module: hr_attendance
 #: model:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_filter
@@ -521,13 +523,13 @@ msgstr "Cán bộ"
 #. module: hr_attendance
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_pin
 msgid "PIN"
-msgstr ""
+msgstr "MÃ SỐ"
 
 #. module: hr_attendance
 #: model:ir.model.fields,help:hr_attendance.field_hr_employee_pin
 msgid "PIN used to Check In/Out in Kiosk Mode (if enabled in Configuration)."
 msgstr ""
-"PIN được sử dụng để Check In/Out trong chế độ Ki-Ốt (nếu được kích hoạt ở "
+"MÃ SỐ được sử dụng để Check In/Out trong chế độ Ki-Ốt (nếu được kích hoạt ở "
 "Cấu hình)."
 
 #. module: hr_attendance
@@ -592,6 +594,12 @@ msgid "Settings"
 msgstr "Thiết lập"
 
 #. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_employee.py:155
+#, python-format
+msgid "Such grouping is not allowed."
+msgstr "Nhóm như vậy là không được phép."
+
+#. module: hr_attendance
 #: sql_constraint:hr.employee:0
 msgid ""
 "The Badge ID must be unique, this one is already assigned to another "
@@ -624,8 +632,8 @@ msgid ""
 "The employee will have access to the \"My Attendances\" menu to check in and"
 " out from his session"
 msgstr ""
-"Nhân viên sẽ có quyền truy cập vào trình đơn \"Vào/Ra của Tôi\" để đăng nhập"
-" và đăng xuất khỏi ca của mình"
+"Nhân viên sẽ có quyền truy cập vào trình đơn \"Điểm danh của Tôi\" để đăng "
+"nhập và đăng xuất khỏi ca của mình"
 
 #. module: hr_attendance
 #: model:res.groups,comment:hr_attendance.group_hr_attendance
@@ -633,8 +641,8 @@ msgid ""
 "The user will gain access to the human resources attendance menu, enabling "
 "him to manage his own attendance."
 msgstr ""
-"Người dùng sẽ có quyền truy cập vào trình đơn Quản lý Vào/Ra, cho phép họ "
-"quản lý vào ra của chính mình."
+"Người dùng sẽ có quyền truy cập vào trình đơn Quản lý Điểm danh, cho phép họ"
+" quản lý vào ra của chính mình."
 
 #. module: hr_attendance
 #: model:res.groups,comment:hr_attendance.group_hr_attendance_use_pin
@@ -678,14 +686,14 @@ msgstr ""
 #: code:addons/hr_attendance/static/src/xml/attendance.xml:112
 #, python-format
 msgid "Welcome"
-msgstr "Chào mừng"
+msgstr "Xin chào"
 
 #. module: hr_attendance
 #. openerp-web
 #: code:addons/hr_attendance/static/src/xml/attendance.xml:11
 #, python-format
 msgid "Welcome to"
-msgstr "Chào mừng đến"
+msgstr "Chào mừng bạn đến"
 
 #. module: hr_attendance
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance_worked_hours

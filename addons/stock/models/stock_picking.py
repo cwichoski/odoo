@@ -245,7 +245,8 @@ class Picking(models.Model):
     picking_type_id = fields.Many2one(
         'stock.picking.type', 'Operation Type',
         required=True,
-        states={'done': [('readonly', True)], 'cancel': [('readonly', True)]})
+        readonly=True,
+        states={'draft': [('readonly', False)]})
     picking_type_code = fields.Selection([
         ('incoming', 'Vendors'),
         ('outgoing', 'Customers'),
@@ -297,7 +298,7 @@ class Picking(models.Model):
                                'initial demand. When the picking is done this allows '
                                'changing the done quantities.')
     # Used to search on pickings
-    product_id = fields.Many2one('product.product', 'Product', related='move_lines.product_id')
+    product_id = fields.Many2one('product.product', 'Product', related='move_lines.product_id', readonly=True)
     show_operations = fields.Boolean(compute='_compute_show_operations')
     show_lots_text = fields.Boolean(compute='_compute_show_lots_text')
     has_tracking = fields.Boolean(compute='_compute_has_tracking')
@@ -470,8 +471,9 @@ class Picking(models.Model):
             else:
                 location_dest_id, supplierloc = self.env['stock.warehouse']._get_partner_locations()
 
-            self.location_id = location_id
-            self.location_dest_id = location_dest_id
+            if self.state == 'draft':
+                self.location_id = location_id
+                self.location_dest_id = location_dest_id
         # TDE CLEANME move into onchange_partner_id
         if self.partner_id:
             if self.partner_id.picking_warn == 'no-message' and self.partner_id.parent_id:
@@ -500,7 +502,7 @@ class Picking(models.Model):
         # As it is a create the format will be a list of (0, 0, dict)
         if vals.get('move_lines') and vals.get('location_id') and vals.get('location_dest_id'):
             for move in vals['move_lines']:
-                if len(move) == 3:
+                if len(move) == 3 and move[0] == 0:
                     move[2]['location_id'] = vals['location_id']
                     move[2]['location_dest_id'] = vals['location_dest_id']
         res = super(Picking, self).create(vals)
@@ -536,7 +538,7 @@ class Picking(models.Model):
     @api.multi
     def unlink(self):
         self.mapped('move_lines')._action_cancel()
-        self.mapped('move_lines').unlink() # Checks if moves are not done
+        self.with_context(prefetch_fields=False).mapped('move_lines').unlink()  # Checks if moves are not done
         return super(Picking, self).unlink()
 
     # Actions
@@ -545,6 +547,10 @@ class Picking(models.Model):
     @api.one
     def action_assign_owner(self):
         self.move_line_ids.write({'owner_id': self.owner_id.id})
+
+    def action_assign_partner(self):
+        for picking in self:
+            picking.move_lines.write({'partner_id': picking.partner_id.id})
 
     @api.multi
     def do_print_picking(self):
@@ -702,7 +708,7 @@ class Picking(models.Model):
         # If no lots when needed, raise error
         picking_type = self.picking_type_id
         precision_digits = self.env['decimal.precision'].precision_get('Product Unit of Measure')
-        no_quantities_done = all(float_is_zero(move_line.qty_done, precision_digits=precision_digits) for move_line in self.move_line_ids)
+        no_quantities_done = all(float_is_zero(move_line.qty_done, precision_digits=precision_digits) for move_line in self.move_line_ids.filtered(lambda m: m.state not in ('done', 'cancel')))
         no_reserved_quantities = all(float_is_zero(move_line.product_qty, precision_rounding=move_line.product_uom_id.rounding) for move_line in self.move_line_ids)
         if no_reserved_quantities and no_quantities_done:
             raise UserError(_('You cannot validate a transfer if you have not processed any quantity. You should rather cancel the transfer.'))
@@ -900,4 +906,13 @@ class Picking(models.Model):
         packages = self.move_line_ids.mapped('result_package_id')
         action['domain'] = [('id', 'in', packages.ids)]
         action['context'] = {'picking_id': self.id}
+        return action
+
+    def action_picking_move_tree(self):
+        action = self.env.ref('stock.stock_move_action').read()[0]
+        action['views'] = [
+            (self.env.ref('stock.view_picking_move_tree').id, 'tree'),
+        ]
+        action['context'] = self.env.context
+        action['domain'] = [('picking_id', 'in', self.ids)]
         return action

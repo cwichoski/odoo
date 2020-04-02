@@ -219,7 +219,8 @@ var FieldTextHtmlSimple = basic_fields.DebouncedField.extend(TranslatableFieldMi
         this.$content = this.$('.note-editable:first');
         this.$content.html(this._textToHtml(this.value));
         // trigger a mouseup to refresh the editor toolbar
-        this.$content.trigger('mouseup');
+        var mouseupEvent = $.Event('mouseup', {'setStyleInfoFromEditable': true});
+        this.$content.trigger(mouseupEvent);
         if (this.nodeOptions['style-inline']) {
             transcoder.styleToClass(this.$content);
             transcoder.imgToFont(this.$content);
@@ -393,8 +394,6 @@ var FieldTextHtml = AbstractField.extend({
             }
         }
 
-        // delete datarecord[this.name];
-        src += "&datarecord="+ encodeURIComponent(JSON.stringify(datarecord));
         return src;
     },
     old_initialize_content: function () {

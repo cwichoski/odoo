@@ -56,7 +56,7 @@ Running the server
         Maximum allowed virtual memory per worker. If the limit is exceeded,
         the worker is killed and recycled at the end of the current request.
 
-        Defaults to 2048MB.
+        Defaults to 2048MiB.
 
     .. option:: --limit-memory-hard <limit>
 
@@ -64,7 +64,7 @@ Running the server
         immediately killed without waiting for the end of the current request
         processing.
 
-        Defaults to 2560MB.
+        Defaults to 2560MiB.
 
     .. option:: --limit-time-cpu <limit>
 
@@ -209,6 +209,12 @@ database
 
     when creating new databases from the database-management screens, use the
     specified `template database`_. Defaults to ``template1``.
+
+.. option:: --pg_path </path/to/postgresql/binaries>
+
+    Path to the PostgreSQL binaries that are used by the database manager to
+    dump and restore databases. You have to specify this option only if these
+    binaries are located in a non-standard directory.
 
 .. option:: --no-database-list
 

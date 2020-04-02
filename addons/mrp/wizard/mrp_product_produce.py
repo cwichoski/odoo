@@ -36,9 +36,10 @@ class MrpProductProduce(models.TransientModel):
             if 'product_qty' in fields:
                 res['product_qty'] = todo_quantity
             if 'produce_line_ids' in fields:
+                qty_by_bom = production.product_uom_id._compute_quantity(todo_quantity, production.bom_id.product_uom_id)
                 lines = []
                 for move in production.move_raw_ids.filtered(lambda x: (x.product_id.tracking != 'none') and x.state not in ('done', 'cancel') and x.bom_line_id):
-                    qty_to_consume = float_round(todo_quantity / move.bom_line_id.bom_id.product_qty * move.bom_line_id.product_qty,
+                    qty_to_consume = float_round(qty_by_bom / move.bom_line_id.bom_id.product_qty * move.bom_line_id.product_qty,
                                                  precision_rounding=move.product_uom.rounding, rounding_method="UP")
                     for move_line in move.move_line_ids:
                         if float_compare(qty_to_consume, 0.0, precision_rounding=move.product_uom.rounding) <= 0:
@@ -85,7 +86,7 @@ class MrpProductProduce(models.TransientModel):
     product_uom_id = fields.Many2one('product.uom', 'Unit of Measure')
     lot_id = fields.Many2one('stock.production.lot', string='Lot')
     produce_line_ids = fields.One2many('mrp.product.produce.line', 'product_produce_id', string='Product to Track')
-    product_tracking = fields.Selection(related="product_id.tracking")
+    product_tracking = fields.Selection(related="product_id.tracking", readonly=True)
 
     @api.multi
     def do_produce(self):
@@ -103,7 +104,7 @@ class MrpProductProduce(models.TransientModel):
                 elif len(move._get_move_lines()) < 2:
                     move.quantity_done += float_round(quantity * move.unit_factor, precision_rounding=rounding)
                 else:
-                    self._set_quantity_done(move, quantity * move.unit_factor)
+                    move._set_quantity_done(quantity * move.unit_factor)
         for move in self.production_id.move_finished_ids:
             if move.product_id.tracking == 'none' and move.state not in ('done', 'cancel'):
                 rounding = move.product_uom.rounding
@@ -120,40 +121,6 @@ class MrpProductProduce(models.TransientModel):
             })
         return {'type': 'ir.actions.act_window_close'}
 
-    def _set_quantity_done(self, move, qty):
-        """
-        Set the given quantity as quantity done on the move through the move lines. The method is
-        able to handle move lines with a different UoM than the move (but honestly, this would be
-        looking for trouble...).
-        @param move: stock.move
-        @param qty: quantity in the UoM of move.product_uom
-        """
-        for ml in move.move_line_ids:
-            # Convert move line qty into move uom
-            ml_qty = ml.product_uom_qty - ml.qty_done
-            if ml.product_uom_id != move.product_uom:
-                ml_qty = ml.product_uom_id._compute_quantity(ml_qty, move.product_uom, round=False)
-
-            taken_qty = min(qty, ml_qty)
-            # Convert taken qty into move line uom
-            if ml.product_uom_id != move.product_uom:
-                taken_qty = move.product_uom._compute_quantity(ml_qty, ml.product_uom_id, round=False)
-
-            # Assign qty_done and explicitly round to make sure there is no inconsistency between
-            # ml.qty_done and qty.
-            taken_qty = float_round(taken_qty, precision_rounding=ml.product_uom_id.rounding)
-            ml.qty_done += taken_qty
-            if ml.product_uom_id != move.product_uom:
-                taken_qty = ml.product_uom_id._compute_quantity(ml_qty, move.product_uom, round=False)
-            qty -= taken_qty
-
-            if float_compare(qty, 0.0,  precision_rounding=move.product_uom.rounding) <= 0:
-                break
-        if float_compare(qty, 0.0,  precision_rounding=move.product_uom.rounding) > 0:
-            vals = move._prepare_move_line_vals(quantity=0)
-            vals['qty_done'] = qty
-            ml = self.env['stock.move.line'].create(vals)
-
     @api.multi
     def check_finished_move_lots(self):
         produce_move = self.production_id.move_finished_ids.filtered(lambda x: x.product_id == self.product_id and x.state not in ('done', 'cancel'))
@@ -167,6 +134,7 @@ class MrpProductProduce(models.TransientModel):
                 existing_move_line.product_uom_qty += self.product_qty
                 existing_move_line.qty_done += self.product_qty
             else:
+                location_dest_id = produce_move.location_dest_id.get_putaway_strategy(self.product_id).id or produce_move.location_dest_id.id
                 vals = {
                   'move_id': produce_move.id,
                   'product_id': produce_move.product_id.id,
@@ -176,7 +144,7 @@ class MrpProductProduce(models.TransientModel):
                   'qty_done': self.product_qty,
                   'lot_id': self.lot_id.id,
                   'location_id': produce_move.location_id.id,
-                  'location_dest_id': produce_move.location_dest_id.id,
+                  'location_dest_id': location_dest_id,
                 }
                 self.env['stock.move.line'].create(vals)
 

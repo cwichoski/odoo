@@ -196,11 +196,11 @@ def concat_xml(file_list):
 
     :param list(str) file_list: list of files to check
     :returns: (concatenation_result, checksum)
-    :rtype: (str, str)
+    :rtype: (bytes, str)
     """
     checksum = hashlib.new('sha1')
     if not file_list:
-        return '', checksum.hexdigest()
+        return b'', checksum.hexdigest()
 
     root = None
     for fname in file_list:
@@ -1290,7 +1290,7 @@ class Export(http.Controller):
                       'relation_field': field.get('relation_field')}
             records.append(record)
 
-            if len(name.split('/')) < 3 and 'relation' in field:
+            if len(id.split('/')) < 3 and 'relation' in field:
                 ref = field.pop('relation')
                 record['value'] += '/id'
                 record['params'] = {'model': ref, 'prefix': id, 'name': name}

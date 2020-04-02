@@ -3,26 +3,28 @@
 # * sales_team
 # 
 # Translators:
-# amrnegm <amrnegm.01@gmail.com>, 2017
-# Mustafa Rawi <mustafa@cubexco.com>, 2017
-# Ghaith Gammar <g.gammar@saharaifs.net>, 2017
-# Shaima Safar <shaima.safar@open-inside.com>, 2017
-# Akram Alfusayal <akram_ma@hotmail.com>, 2017
-# Martin Trigaux, 2017
-# Osoul <baruni@osoul.ly>, 2017
-# Osama Ahmaro <osamaahmaro@gmail.com>, 2017
 # Islam Eldeeb <islameldeb@gmail.com>, 2017
+# Martin Trigaux, 2017
 # Zuhair Hammadi <zuhair12@gmail.com>, 2017
 # Ali zuaby <ali@zuaby.net>, 2017
+# Akram Alfusayal <akram_ma@hotmail.com>, 2017
+# Osama Ahmaro <osamaahmaro@gmail.com>, 2017
+# Ghaith Gammar <g.gammar@saharaifs.net>, 2017
 # Walid Baruni <baroni@osoul.ly>, 2017
+# Shaima Safar <shaima.safar@open-inside.com>, 2017
+# amrnegm <amrnegm.01@gmail.com>, 2017
 # abdullah alsabi <alsabi.abdullah@gmail.com>, 2018
+# Abdulmajeed Alomar <majeeed87@gmail.com>, 2018
+# Osoul <baruni@osoul.ly>, 2018
+# Mustafa Rawi <mustafa@cubexco.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.saas~18\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-10-02 11:26+0000\n"
-"PO-Revision-Date: 2017-10-02 11:26+0000\n"
-"Last-Translator: abdullah alsabi <alsabi.abdullah@gmail.com>, 2018\n"
+"PO-Revision-Date: 2017-09-20 10:24+0000\n"
+"Last-Translator: Mustafa Rawi <mustafa@cubexco.com>, 2019\n"
 "Language-Team: Arabic (https://www.transifex.com/odoo/teams/41243/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,13 +70,13 @@ msgstr "مؤرشف"
 #. module: sales_team
 #: selection:crm.team,dashboard_graph_type:0
 msgid "Bar"
-msgstr ""
+msgstr "حانة"
 
 #. module: sales_team
 #: code:addons/sales_team/models/crm_team.py:269
 #, python-format
 msgid "Big Pretty Button :)"
-msgstr ""
+msgstr "زر كبير جميل :)"
 
 #. module: sales_team
 #: model:ir.model.fields,field_description:sales_team.field_crm_team_user_id
@@ -145,12 +147,12 @@ msgstr "لوحة المبيعات"
 #. module: sales_team
 #: model:ir.model.fields,field_description:sales_team.field_crm_team_dashboard_button_name
 msgid "Dashboard Button"
-msgstr ""
+msgstr "زر لوحة المعلومات"
 
 #. module: sales_team
 #: model:ir.model.fields,field_description:sales_team.field_crm_team_dashboard_graph_data
 msgid "Dashboard Graph Data"
-msgstr ""
+msgstr "بيانات الرسم البياني للوحة المعلومات"
 
 #. module: sales_team
 #: selection:crm.team,dashboard_graph_group:0
@@ -170,13 +172,13 @@ msgstr "أوروبا"
 #. module: sales_team
 #: model:ir.model.fields,field_description:sales_team.field_crm_team_favorite_user_ids
 msgid "Favorite Members"
-msgstr ""
+msgstr "الأعضاء المفضلين"
 
 #. module: sales_team
 #: model:ir.model.fields,help:sales_team.field_crm_team_is_favorite
 msgid ""
 "Favorite teams to display them in the dashboard and access them easily."
-msgstr ""
+msgstr "الفرق المفضلة لعرضهم في لوحة المعلومات للوصول إليهم بسهولة."
 
 #. module: sales_team
 #: model:ir.ui.view,arch_db:sales_team.crm_team_view_form
@@ -203,7 +205,7 @@ msgstr "تجميع حسب"
 #. module: sales_team
 #: model:ir.model.fields,help:sales_team.field_crm_team_dashboard_graph_group
 msgid "How this channel's dashboard graph will group the results."
-msgstr ""
+msgstr "كيفية تجميع الرسم البياني الناتج في لوحة معلومات هذه القناة للنتائج."
 
 #. module: sales_team
 #: model:ir.model.fields,field_description:sales_team.field_crm_team_id
@@ -289,7 +291,7 @@ msgstr "غير معرّف"
 #. module: sales_team
 #: selection:crm.team,dashboard_graph_model:0
 msgid "Pipeline"
-msgstr ""
+msgstr "جذب أموال"
 
 #. module: sales_team
 #: selection:crm.team,team_type:0
@@ -358,7 +360,7 @@ msgstr "الإعدادات"
 #. module: sales_team
 #: model:ir.model.fields,field_description:sales_team.field_crm_team_is_favorite
 msgid "Show on dashboard"
-msgstr ""
+msgstr "الإظهار في لوحة المعلومات"
 
 #. module: sales_team
 #: model:ir.ui.view,arch_db:sales_team.crm_team_salesteams_search
@@ -373,7 +375,7 @@ msgstr "اعضاء الفريق"
 #. module: sales_team
 #: model:ir.model.fields,help:sales_team.field_crm_team_color
 msgid "The color of the channel"
-msgstr ""
+msgstr "لون القناة"
 
 #. module: sales_team
 #: model:ir.model.fields,help:sales_team.field_crm_team_reply_to
@@ -385,23 +387,24 @@ msgstr ""
 #. module: sales_team
 #: model:ir.model.fields,help:sales_team.field_crm_team_dashboard_graph_model
 msgid "The graph this channel will display in the Dashboard.\n"
-msgstr ""
+msgstr "الرسم البياني الذي ستعرضه هذه القناة في لوحة المعلومات.\n"
 
 #. module: sales_team
 #: model:ir.model.fields,help:sales_team.field_crm_team_dashboard_graph_period
 msgid "The time period this channel's dashboard graph will consider."
 msgstr ""
+"الفترة الزمنية التي سيغطيها الرسم البياني الناتج في لوحة معلومات هذه القناة."
 
 #. module: sales_team
 #: model:ir.model.fields,help:sales_team.field_crm_team_dashboard_graph_type
 msgid "The type of graph this channel will display in the dashboard."
-msgstr ""
+msgstr "نوع الرسم البياني الذي ستعرضه هذه القناة في لوحة المعلومات."
 
 #. module: sales_team
 #: model:ir.model.fields,help:sales_team.field_crm_team_team_type
 msgid ""
 "The type of this channel, it will define the resources this channel uses."
-msgstr ""
+msgstr "نوع هذه القناة، سيحدد الموارد التي تستعملها القناة."
 
 #. module: sales_team
 #: model:ir.model.fields,field_description:sales_team.field_crm_team_dashboard_graph_type

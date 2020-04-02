@@ -3,20 +3,23 @@
 # * hr
 # 
 # Translators:
-# Martin Trigaux, 2017
-# Duy BQ <duybq86@gmail.com>, 2017
-# thanh nguyen <thanhnguyen.icsc@gmail.com>, 2017
-# fanha99 <fanha99@hotmail.com>, 2017
 # Phạm Lân <phamquanglan@gmail.com>, 2017
+# fanha99 <fanha99@hotmail.com>, 2017
 # son dang <son.dang@doda100.com>, 2017
 # Duc Dao <blakice12@gmail.com>, 2017
+# Martin Trigaux, 2018
+# Duy BQ <duybq86@gmail.com>, 2018
+# khoibv Mr <kendev2009@gmail.com>, 2018
+# Nancy Momoland <thanhnguyen.icsc@gmail.com>, 2019
+# Dung Nguyen Thi <dungnt@trobz.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-27 11:55+0000\n"
-"PO-Revision-Date: 2018-07-27 11:55+0000\n"
-"Last-Translator: Duc Dao <blakice12@gmail.com>, 2017\n"
+"POT-Creation-Date: 2019-01-03 15:06+0000\n"
+"PO-Revision-Date: 2017-09-20 10:17+0000\n"
+"Last-Translator: Dung Nguyen Thi <dungnt@trobz.com>, 2019\n"
 "Language-Team: Vietnamese (https://www.transifex.com/odoo/teams/41243/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,6 +69,15 @@ msgstr "<i>Bạn chủ động và học hỏi nhanh chóng</i>"
 #: model:hr.job,website_description:hr.job_marketing
 msgid "<i>You easily manage them</i>"
 msgstr "<i>Bạn dễ dàng quản lý chúng</i>"
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.res_config_settings_view_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" groups=\"base.group_multi_company\"/>"
 
 #. module: hr
 #: model:ir.ui.view,arch_db:hr.hr_kanban_view_employees
@@ -151,6 +163,10 @@ msgid ""
 "source project in a friendly and cooperative atmosphere sounds like fun to "
 "you, read on..."
 msgstr ""
+"Vì sự phát triển không ngừng nghỉ, chúng tôi hiện đang tìm kiếm người để "
+"củng cố đội ngũ nhân viên kỹ thuật nhiệt tình với hoài bảo lớn của chúng "
+"tôi. Vì vậy, nếu làm việc trên một dự án lớn trong một môi trường thân thiện"
+" và hợp tác có vẻ giống như niềm vui đối với bạn, hãy đọc tiếp ..."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
@@ -163,6 +179,10 @@ msgid ""
 "our team of enthusiastic developers. So if working on an open source project"
 " in a friendly and cooperative atmosphere sounds like fun to you, read on..."
 msgstr ""
+"Vì sự phát triển không ngừng, chúng tôi hiện đang tìm kiếm người để củng cố "
+"đội ngũ các nhà phát triển nhiệt tình của chúng tôi. Vì vậy, nếu làm việc "
+"trên một dự án mã nguồn mở trong một môi trường thân thiện và hợp tác có vẻ "
+"giống như niềm vui đối với bạn, hãy đọc tiếp ..."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_trainee
@@ -171,6 +191,10 @@ msgid ""
 "our team of enthusiastic trainees. So if working on an open source project "
 "in a friendly and cooperative atmosphere sounds like fun to you, read on..."
 msgstr ""
+"Vì sự phát triển không ngừng, chúng tôi hiện đang tìm kiếm người để củng cố "
+"đội ngũ học viên nhiệt tình của chúng tôi. Vì vậy, nếu làm việc trên một dự "
+"án mã nguồn mở trong một môi trường thân thiện và hợp tác có vẻ giống như "
+"niềm vui đối với bạn, hãy đọc tiếp ..."
 
 #. module: hr
 #: model:ir.ui.view,arch_db:hr.view_employee_form
@@ -285,7 +309,7 @@ msgstr "Thông tin liên hệ"
 #: model:hr.job,website_description:hr.job_developer
 #: model:hr.job,website_description:hr.job_trainee
 msgid "Contributions to open source projects"
-msgstr ""
+msgstr "Đóng góp cho các dự án nguồn mở"
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_department_create_uid
@@ -323,7 +347,7 @@ msgstr "Tạo 1 chiến lược giao tiếp rõ ràng"
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "Deliver generic Odoo functional training sessions"
-msgstr ""
+msgstr "Cung cấp các buổi đào tạo chức năng chung của Hệ thống"
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_employee_department_id
@@ -429,6 +453,8 @@ msgid ""
 "Enter here the private address of the employee, not the one linked to your "
 "company."
 msgstr ""
+"Nhập vào đây địa chỉ riêng của nhân viên, chứ không phải địa chỉ liên hệ với"
+" công ty của bạn."
 
 #. module: hr
 #: code:addons/hr/models/hr.py:310
@@ -487,7 +513,7 @@ msgstr "Giới tính"
 #. module: hr
 #: model:hr.job,website_description:hr.job_developer
 msgid "Good knowledge of HTML and Javascript"
-msgstr ""
+msgstr "Kiến thức tốt về HTML và Javascript"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_cto
@@ -548,17 +574,17 @@ msgstr "Giúp đỡ cấu hình phần mềm"
 #. module: hr
 #: model:hr.job,website_description:hr.job_hrm
 msgid "Hire a team of great Human Resources people"
-msgstr ""
+msgstr "Thuê một đội ngũ nhân sự tuyệt vời"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
 msgid "Hire a team of great executive people"
-msgstr ""
+msgstr "Thuê một đội ngũ những người điều hành tuyệt vời"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_marketing
 msgid "Hire a team of great marketing people"
-msgstr ""
+msgstr "Thuê một nhóm người tiếp thị tuyệt vời"
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_job_no_of_hired_employee
@@ -710,12 +736,12 @@ msgstr "Triển khai sản phẩm mới, chiến dịch nhân sự"
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
 msgid "Launch new products, marketing campaigns and offers"
-msgstr ""
+msgstr "Ra mắt sản phẩm mới, chiến dịch tiếp thị và ưu đãi"
 
 #. module: hr
 #: selection:hr.employee,marital:0
 msgid "Legal Cohabitant"
-msgstr ""
+msgstr "Đồng giới"
 
 #. module: hr
 #: selection:hr.employee,gender:0
@@ -849,6 +875,9 @@ msgid ""
 "                related to employees by departments: expenses, timesheets,\n"
 "                leaves, recruitments, etc."
 msgstr ""
+"Cấu trúc phòng ban của Odoo thường dùng để quản lý tất cả tài liệu liên quan"
+" Đến nhân viên từng phòng ban: chi tiêu, bảng chấm công, nghỉ việc, tuyển "
+"dụng, v.v."
 
 #. module: hr
 #: model:res.groups,name:hr.group_hr_user
@@ -905,7 +934,7 @@ msgstr "Ảnh"
 #: model:hr.job,website_description:hr.job_marketing
 #: model:hr.job,website_description:hr.job_trainee
 msgid "Pictures of smart and enthusiastic people"
-msgstr ""
+msgstr "Hình ảnh của những người thông minh và nhiệt tình"
 
 #. module: hr
 #: model:ir.ui.view,arch_db:hr.view_employee_form
@@ -1000,7 +1029,7 @@ msgstr "Số An sinh Xã hội"
 #: model:hr.job,website_description:hr.job_hrm
 #: model:hr.job,website_description:hr.job_marketing
 msgid "Scale our events organization all around the world"
-msgstr ""
+msgstr "Quy mô tổ chức sự kiện của chúng tôi trên toàn thế giới"
 
 #. module: hr
 #: model:ir.ui.view,arch_db:hr.res_config_settings_view_form
@@ -1157,6 +1186,7 @@ msgstr "Thực tập sinh"
 #: model:hr.job,website_description:hr.job_marketing
 msgid "Transform our product into a suite of well positioned business Apps"
 msgstr ""
+"Chuyển đổi sản phẩm của chúng tôi thành một bộ ứng dụng kinh doanh tốt"
 
 #. module: hr
 #: model:ir.ui.view,arch_db:hr.hr_kanban_view_employees
@@ -1212,6 +1242,12 @@ msgid ""
 " give him the best service. You report to the head of consulting service and"
 " will be coached by a senior consultant."
 msgstr ""
+"Chúng tôi đang tìm kiếm một nhân viên tư vấn có động lực và hướng đến kết "
+"quả! Bạnsẽ tham gia vào các dịch vụ tư vấn mà chúng tôi cung cấp cho các đối"
+" tác vàkhách hàng, về mặt chức năng. Công việc của bạn bắt đầu từ báo giá "
+"đếnkhách hàng, giao hàng cho khách hàng. Bạn lắng nghe khách hàng và cố "
+"gắngcung cấp cho họ dịch vụ tốt nhất. Bạn báo cáo cho người đứng đầu dịch vụ"
+" tư vấn vàsẽ được huấn luyện bởi một chuyên gia tư vấn cao cấp."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_hrm
@@ -1221,6 +1257,10 @@ msgid ""
 "and ..... not afraid to start new things, a lot of new things and scale "
 "them."
 msgstr ""
+"Chúng tôi đang tìm kiếm một người quản lý nguồn nhân lực đầy nhiệt huyết để "
+"giúp chúng tôi làm cho những sản phẩm mà mọi người yêu thích sử dụng. Chúng "
+"ta cần một người đầy tham vọng, đam mê, và ..... không sợ bắt đầu những điều"
+" mới mẻ, nhiều thứ mới và mở rộng chúng."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
@@ -1229,6 +1269,10 @@ msgid ""
 "people love to use. We need someone who is ambitious, passionated, and ....."
 " not afraid to start new things, a lot of new things and scale them."
 msgstr ""
+"Chúng tôi đang tìm kiếm một giám đốc điều hành đầy nhiệt huyết để giúp chúng"
+" tôi tạo ra các sản phẩmmọi người thích sử dụng. Chúng tôi cần một người có "
+"tham vọng, đam mê và .....không ngại bắt đầu những điều mới, rất nhiều điều "
+"mới và mở rộng chúng."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_marketing
@@ -1237,6 +1281,10 @@ msgid ""
 "people love to use. We need someone who is ambitious, passionated, and ....."
 " not afraid to start new things, a lot of new things and scale them."
 msgstr ""
+"Chúng tôi đang tìm kiếm một nhà quản lý tiếp thị đam mê để giúp chúng tôi "
+"tạo ra sản phẩmmọi người thích sử dụng. Chúng tôi cần một người có tham "
+"vọng, đam mê và .....không ngại bắt đầu những điều mới, rất nhiều điều mới "
+"và mở rộng chúng."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
@@ -1268,7 +1316,7 @@ msgstr "Goá"
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "Will report to the Head of Professional Services"
-msgstr ""
+msgstr "Sẽ báo cáo cho Giám đốc Dịch vụ chuyên nghiệp"
 
 #. module: hr
 #: model:ir.actions.act_window,help:hr.act_employee_from_department
@@ -1278,6 +1326,9 @@ msgid ""
 "                can easily find all the information you need for each person;\n"
 "                contact data, job position, availability, etc."
 msgstr ""
+"Chỉ với một cái nhìn nhanh trên màn hình nhân viên của Hệ thống, bạn\n"
+"                 có thể dễ dàng tìm thấy tất cả thông tin bạn cần cho mỗi người;\n"
+"                 dữ liệu liên lạc, vị trí công việc, tính khả dụng, v.v."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
@@ -1292,6 +1343,10 @@ msgid ""
 "source, full featured and it’s online offer is 3 times cheaper than "
 "traditional competitors. We have 2.000.000 users, and we're growing fast."
 msgstr ""
+"Với sản phẩm của chúng tôi, là một bộ 3000 ứng dụng kinh doanh. Nó hoàn toàn"
+" là mã nguồnmở, đầy đủ tính năng và cung cấp trực tuyến của nó rẻ hơn 3 lần "
+"so vớiđối thủ cạnh tranh truyền thống. Chúng tôi có 2.000.000 người dùng và "
+"chúng tôi đang phát triển rất nhanh."
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_employee_address_id
@@ -1346,53 +1401,53 @@ msgstr "Viết nội dung hấp dẫn"
 #. module: hr
 #: model:hr.job,website_description:hr.job_hrm
 msgid "Write attractive content and build up Human Resources materials"
-msgstr ""
+msgstr "Viết nội dung hấp dẫn và xây dựng nguồn nhân lực"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
 msgid "Write attractive content and build up executive materials"
-msgstr ""
+msgstr "Viết nội dung hấp dẫn và xây dựng tài liệu điều hành"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "You are a quick and autonomous learner"
-msgstr ""
+msgstr "Bạn là người tự học và tiếp thu nhanh"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "You are an excellent communicator and negotiator"
-msgstr ""
+msgstr "Bạn là một nhà giao tiếp và đàm phán tuyệt vời"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
 #: model:hr.job,website_description:hr.job_hrm
 #: model:hr.job,website_description:hr.job_marketing
 msgid "You are approachable, honest and fun team player"
-msgstr ""
+msgstr "Bạn là người chơi dễ gần, trung thực và vui vẻ"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "You are available immediately"
-msgstr ""
+msgstr "Bạn có sẵn ngay lập tức"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
 #: model:hr.job,website_description:hr.job_hrm
 #: model:hr.job,website_description:hr.job_marketing
 msgid "You are creative"
-msgstr ""
+msgstr "Bạn thật sáng tạo"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "You are ready to travel in US"
-msgstr ""
+msgstr "Bạn đã sẵn sàng đi du lịch ở Mỹ"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
 #: model:hr.job,website_description:hr.job_hrm
 #: model:hr.job,website_description:hr.job_marketing
 msgid "You are ready to work in a dynamic company"
-msgstr ""
+msgstr "Bạn đã sẵn sàng để làm việc trong một công ty năng động"
 
 #. module: hr
 #: model:ir.actions.act_window,help:hr.action_hr_job
@@ -1405,40 +1460,40 @@ msgstr ""
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "You have 2 or 3 years of experience"
-msgstr ""
+msgstr "Bạn có 2 đến 3 năm kinh nghiệm"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "You have a Master degree in Business Management"
-msgstr ""
+msgstr "Bạn có bằng thạc sĩ quản trị kinh doanh"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 #: model:hr.job,website_description:hr.job_marketing
 msgid "You have an affinity with the IT world"
-msgstr ""
+msgstr "Bạn có một mối quan hệ với thế giới CNTT"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
 #: model:hr.job,website_description:hr.job_hrm
 #: model:hr.job,website_description:hr.job_marketing
 msgid "You have an affinity with the product"
-msgstr ""
+msgstr "Bạn có mối quan hệ với sản phẩm"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "You have good knowledge in accounting"
-msgstr ""
+msgstr "Bạn có kiến thức tốt về kế toán "
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "You speak a third language"
-msgstr ""
+msgstr "Bạn nói ngôn ngữ thứ ba"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "You speak fluently French and English"
-msgstr ""
+msgstr "Bạn nói trôi chảy tiếng Pháp và tiếng Anh"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_cto
@@ -1449,6 +1504,9 @@ msgid ""
 "small distributed development teams for specific projects. You will become a"
 " technical                 expert of the product."
 msgstr ""
+"Bạn sẽ chịu trách nhiệm phát triển và cải thiện các ứng dụng. Bạn sẽlàm việc"
+" tự chủ cũng như phối hợp và giám sát các nhóm phát triểnnhỏ cho các dự án "
+"cụ thể. Bạn sẽ trở thành mộtchuyên gia kỹ thuật của sản phẩm."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_developer
@@ -1458,6 +1516,9 @@ msgid ""
 "development teams for specific projects. You will become a technical expert "
 "of the product."
 msgstr ""
+"Bạn sẽ chịu trách nhiệm phát triển và cải thiện các ứng dụng. Bạn sẽlàm việc"
+" tự chủ cũng như phối hợp và giám sát nhóm pháttriển nhỏ cho các dự án cụ "
+"thể. Bạn sẽ trở thành một chuyên gia kỹ thuậtcủa sản phẩm."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_ceo
@@ -1469,50 +1530,53 @@ msgid ""
 "distributed development teams for specific projects. You will become a "
 "techinical expert of the product."
 msgstr ""
+"Bạn sẽ chịu trách nhiệm phát triển và cải tiến sản phẩm.Bạn sẽ làm việc tự "
+"chủ cũng như phối hợp và giám sát cácnhóm phát triển cho các dự án cụ thể. "
+"Bạn sẽ trở thành mộtchuyên gia công nghệ của sản phẩm."
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_cto
 #: model:hr.job,website_description:hr.job_developer
 #: model:hr.job,website_description:hr.job_trainee
 msgid "You will become a technical expert of the product."
-msgstr ""
+msgstr "Bạn sẽ trở thành chuyên gia kỹ thuật của sản phẩm"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_developer
 msgid "You will initially be coached by senior developers"
-msgstr ""
+msgstr "Bạn sẽ được hướng dẫn bởi các nhà phát triển có kinh nghiệm"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_cto
 msgid "You will initially be coached by senior technical officer"
-msgstr ""
+msgstr "Bạn sẽ được hướng dẫn bởi nhân viên kỹ thuật có kinh nghiệm"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_trainee
 msgid "You will initially be coached by senior trainees"
-msgstr ""
+msgstr "Bạn sẽ được hướng dẫn bởi những người có kinh nghiệm"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_cto
 #: model:hr.job,website_description:hr.job_developer
 #: model:hr.job,website_description:hr.job_trainee
 msgid "You will report to the head of R&amp;D"
-msgstr ""
+msgstr "Bạn sẽ bảo cáo cho trưởng phòng R&amp;D"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_developer
 msgid "You will work closely with all developers"
-msgstr ""
+msgstr "Bạn sẽ làm việc trực tiếp với người phát triển"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_cto
 msgid "You will work closely with all technical officer"
-msgstr ""
+msgstr "Bạn sẽ làm việc trực tiếp với tất cả các nhân viên kỹ thuật"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_trainee
 msgid "You will work closely with all trainees"
-msgstr ""
+msgstr "Bạn sẽ làm việc trực tiếp với các thực tập sinh"
 
 #. module: hr
 #: model:mail.template,subject:hr.mail_template_data_unknown_employee_email_address
@@ -1548,7 +1612,7 @@ msgstr "vd Quản lý Bán hàng"
 #. module: hr
 #: model:ir.model,name:hr.model_mail_alias_mixin
 msgid "mail.alias.mixin"
-msgstr ""
+msgstr "mail.alias.mixin"
 
 #. module: hr
 #: model:ir.model,name:hr.model_res_config_settings
